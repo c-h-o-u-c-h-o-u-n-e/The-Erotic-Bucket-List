@@ -1,3 +1,5 @@
+"use client";
+
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { EroticBucketListHeader } from "@/components/EroticBucketListHeader";
 import { EditionSelector } from "@/components/EditionSelector";
