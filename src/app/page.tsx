@@ -6,12 +6,14 @@ import { EditionSelector } from "@/components/EditionSelector";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { MainContentCard } from "@/components/MainContentCard";
 import { useState } from "react";
+import Link from "next/link"; // Import de Link
 import {
   Breadcrumb,
   BreadcrumbList,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbPage,
+  BreadcrumbSeparator, // Import de BreadcrumbSeparator
 } from "@/components/ui/breadcrumb";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -38,9 +40,15 @@ export default function Home() {
         <Card className="w-fit bg-header shadow-custom-header">
           <CardContent className="px-3 py-1">
             <Breadcrumb>
-              <BreadcrumbList className="font-wf-visual-sans h-6"> {/* Ajout de la police et de la hauteur ici */}
+              <BreadcrumbList className="font-wf-visual-sans h-6">
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Accueil</BreadcrumbPage>
+                  <BreadcrumbLink asChild>
+                    <Link href="/">Accueil</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>The Erotic Bucket List</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>

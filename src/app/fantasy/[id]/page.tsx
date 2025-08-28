@@ -41,6 +41,20 @@ const placeholderFantasyItem: FantasyItem = {
   difficulty: "Modérée",
 };
 
+// Fonction utilitaire pour obtenir le nom de l'édition
+const getEditionName = (edition: Edition) => {
+  switch (edition) {
+    case "straight":
+      return "Straight Edition";
+    case "gay":
+      return "Gay Edition";
+    case "sapphic":
+      return "Sapphic Edition";
+    default:
+      return "";
+  }
+};
+
 export default function FantasyPage() {
   // Dans une application réelle, vous récupéreriez les données en fonction de params.id
   // Pour ce modèle, nous utilisons les données de remplacement.
@@ -57,7 +71,7 @@ export default function FantasyPage() {
         <Card className="w-fit bg-header shadow-custom-header">
           <CardContent className="px-3 py-1">
             <Breadcrumb>
-              <BreadcrumbList className="font-wf-visual-sans h-6"> {/* Ajout de la police et de la hauteur ici */}
+              <BreadcrumbList className="font-wf-visual-sans h-6">
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
                     <Link href="/">Accueil</Link>
@@ -65,7 +79,21 @@ export default function FantasyPage() {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>Fantasme</BreadcrumbPage>
+                  <BreadcrumbLink asChild>
+                    <Link href="/">The Erotic Bucket List</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link href={`/?edition=${selectedEdition}`}>
+                      {getEditionName(selectedEdition)}
+                    </Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>{item.title}</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
