@@ -6,6 +6,7 @@ import { useState } from "react";
 import { EroticBucketListHeader } from "@/components/EroticBucketListHeader";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import Link from "next/link";
+import { Home as HomeIcon } from "lucide-react"; // Renommage de l'icône Home en HomeIcon
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -14,7 +15,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { getEditionName } from "@/lib/utils"; // Import de getEditionName
+import { getEditionName } from "@/lib/utils";
 
 // Interface pour définir la structure d'un élément de fantasme
 interface FantasyItem {
@@ -61,7 +62,10 @@ export default function FantasyPage() {
               <BreadcrumbList className="font-wf-visual-sans h-6">
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link href="/">Accueil</Link>
+                    <Link href="/">
+                      <HomeIcon className="h-4 w-4" /> {/* Utilisation de HomeIcon */}
+                      <span className="sr-only">Accueil</span>
+                    </Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
@@ -118,7 +122,6 @@ export default function FantasyPage() {
                 <p className="font-wf-visual-sans text-base">{item.preparation}</p>
               </div>
               <div>
-                <p className="font-jetbrains-mono text-sm text-muted-foreground">Durée:</p>
                 <p className="font-wf-visual-sans text-base">{item.duration}</p>
               </div>
               <div>

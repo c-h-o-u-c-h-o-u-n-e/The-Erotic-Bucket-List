@@ -7,6 +7,7 @@ import { LanguageSelector } from "@/components/LanguageSelector";
 import { MainContentCard } from "@/components/MainContentCard";
 import { useState } from "react";
 import Link from "next/link";
+import { Home as HomeIcon } from "lucide-react";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -15,8 +16,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Card, CardContent } from "@/components/ui/card";
-import { getEditionName } from "@/lib/utils"; // Import de getEditionName
+import { Card, CardContent } from "@/components/ui/card"; // Correction ici
+import { getEditionName } from "@/lib/utils";
 
 type Edition = "straight" | "gay" | "sapphic";
 type Language = "en" | "fr" | "es";
@@ -44,7 +45,10 @@ export default function Home() {
               <BreadcrumbList className="font-wf-visual-sans h-6">
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link href="/">Accueil</Link>
+                    <Link href="/">
+                      <HomeIcon className="h-4 w-4" />
+                      <span className="sr-only">Accueil</span>
+                    </Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
