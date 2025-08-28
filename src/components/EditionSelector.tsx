@@ -41,7 +41,7 @@ const editionData: {
     colorClass: "bg-edition-sapphic",
     labels: {
       en: "Sapphic Edition",
-      fr: "Édition saphique",
+      fr: "Édition sáfica",
       es: "Edición sáfica",
     },
   },
@@ -53,7 +53,7 @@ export function EditionSelector({
   selectedLanguage,
 }: EditionSelectorProps) {
   const buttonBaseClasses =
-    "uppercase font-jetbrains-mono font-light text-sm text-white rounded-md p-4 text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none";
+    "uppercase font-jetbrains-mono font-light text-sm text-black rounded-md p-4 text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none";
 
   return (
     <Card className="bg-header shadow-custom-header">
