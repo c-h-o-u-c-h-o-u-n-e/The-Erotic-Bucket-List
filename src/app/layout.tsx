@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local"; // Import localFont
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,16 +13,23 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const inter = Inter({
+// Définition des polices locales
+const interLocal = localFont({
+  src: "../../public/fonts/Inter-VariableFont.ttf",
   variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["900"],
+  display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const jetbrainsMonoLocal = localFont({
+  src: "../../public/fonts/JetBrainsMono-VariableFont.ttf",
   variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  weight: ["400"],
+  display: "swap",
+});
+
+const wfVisualSans = localFont({
+  src: "../../public/fonts/WFVisualSans-Regular.ttf",
+  variable: "--font-wf-visual-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -38,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${interLocal.variable} ${jetbrainsMonoLocal.variable} ${wfVisualSans.variable} antialiased`}
       >
         {children}
       </body>

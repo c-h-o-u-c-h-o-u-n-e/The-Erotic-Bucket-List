@@ -57,7 +57,7 @@ export default {
   				'2': 'hsl(var(--chart-2))',
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
-  				'5': 'hsl(var(--chart-5))'
+  				'5': 'hsl(var(--chart-5)'
   			},
   			sidebar: {
   				DEFAULT: 'hsl(var(--sidebar-background))',
@@ -109,11 +109,11 @@ export default {
         fontFamily: {
             'jetbrains-mono': ['var(--font-jetbrains-mono)'],
             'inter': ['var(--font-inter)'],
+            'wf-visual-sans': ['var(--font-wf-visual-sans)'], // Ajout de la nouvelle police
         },
   	}
   },
   plugins: [require("tailwindcss-animate")],
-  // Ajout de la safelist pour les classes de couleur de texte dynamiques
   safelist: [
     'text-edition-straight',
     'text-edition-gay',
