@@ -11,7 +11,7 @@ type Edition = "straight" | "gay" | "sapphic";
 interface LanguageSelectorProps {
   selectedLanguage: Language;
   setSelectedLanguage: (lang: Language) => void;
-  selectedEdition: Edition; // La prop selectedEdition est maintenant utilisée directement
+  selectedEdition: Edition;
 }
 
 const languageData: { id: Language; label: string }[] = [
@@ -23,13 +23,13 @@ const languageData: { id: Language; label: string }[] = [
 export function LanguageSelector({
   selectedLanguage,
   setSelectedLanguage,
-  selectedEdition, // Récupération de la prop selectedEdition
+  selectedEdition,
 }: LanguageSelectorProps) {
   const buttonBaseClasses =
     "font-inter font-normal rounded-md px-2 py-0.5 text-sm text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none bg-transparent";
 
-  // Construction de la classe de couleur de texte directement à partir de l'édition sélectionnée
-  const textColorClass = `text-edition-${selectedEdition}`;
+  // Construction de la classe de couleur de texte avec !important pour le diagnostic
+  const textColorClass = `!text-edition-${selectedEdition}`;
 
   return (
     <Card className="w-fit bg-header shadow-custom-header">
@@ -40,7 +40,7 @@ export function LanguageSelector({
               onClick={() => setSelectedLanguage(lang.id)}
               className={cn(
                 buttonBaseClasses,
-                textColorClass, // Application de la classe de couleur Tailwind nommée
+                textColorClass, // Application de la classe de couleur Tailwind avec !important
                 {
                   "opacity-40 hover:opacity-70": selectedLanguage !== lang.id,
                   "opacity-100": selectedLanguage === lang.id,
