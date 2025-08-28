@@ -38,7 +38,7 @@ const editionData: {
   },
   {
     id: "sapphic",
-    colorClass: "bg-sapphic",
+    colorClass: "bg-edition-sapphic", // Correction ici : utilisation de bg-edition-sapphic
     labels: {
       en: "Sapphic Edition",
       fr: "Édition sáfica",
