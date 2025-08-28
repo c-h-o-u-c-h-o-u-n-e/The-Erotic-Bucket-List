@@ -67,7 +67,7 @@ export function EditionSelector({
               edition.colorClass,
               "flex-grow-0 flex-shrink-0 basis-[calc(33.33%-1rem)] max-md:basis-full", // For 3 buttons with gap-4, full width on small screens
               {
-                "opacity-20 hover:opacity-60": selectedEdition !== edition.id,
+                "opacity-40 hover:opacity-70": selectedEdition !== edition.id,
                 "opacity-100": selectedEdition === edition.id,
               }
             )}
