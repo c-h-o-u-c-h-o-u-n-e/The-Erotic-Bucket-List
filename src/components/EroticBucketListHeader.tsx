@@ -10,7 +10,7 @@ export function EroticBucketListHeader() {
         </CardTitle>
       </CardHeader>
       <CardContent className="px-6 pb-2">
-        <Separator className="my-4 bg-gray-300" />
+        <Separator className="my-2 bg-gray-300" />
         <p className="font-inter font-black uppercase text-xl md:text-2xl text-center leading-tight">
           500 Things To Do Before You Cum
         </p>
