@@ -57,7 +57,7 @@ export default function FantasyPage() {
         <Card className="w-fit bg-header shadow-custom-header">
           <CardContent className="px-3 py-1">
             <Breadcrumb>
-              <BreadcrumbList className="font-wf-visual-sans"> {/* Ajout de la police ici */}
+              <BreadcrumbList className="font-wf-visual-sans h-6"> {/* Ajout de la police et de la hauteur ici */}
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
                     <Link href="/">Accueil</Link>

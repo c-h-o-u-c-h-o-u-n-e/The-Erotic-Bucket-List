@@ -13,7 +13,7 @@ import {
   BreadcrumbLink,
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
-import { Card, CardContent } from "@/components/ui/card"; // Import de Card et CardContent
+import { Card, CardContent } from "@/components/ui/card";
 
 type Edition = "straight" | "gay" | "sapphic";
 type Language = "en" | "fr" | "es";
@@ -38,7 +38,7 @@ export default function Home() {
         <Card className="w-fit bg-header shadow-custom-header">
           <CardContent className="px-3 py-1">
             <Breadcrumb>
-              <BreadcrumbList className="font-wf-visual-sans"> {/* Ajout de la police ici */}
+              <BreadcrumbList className="font-wf-visual-sans h-6"> {/* Ajout de la police et de la hauteur ici */}
                 <BreadcrumbItem>
                   <BreadcrumbPage>Accueil</BreadcrumbPage>
                 </BreadcrumbItem>
