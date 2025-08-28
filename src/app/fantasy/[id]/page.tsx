@@ -15,7 +15,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { getEditionName } from "@/lib/utils";
+import { getEditionName } from "@/lib/utils"; // Import de getEditionName
 
 // Interface pour définir la structure d'un élément de fantasme
 interface FantasyItem {

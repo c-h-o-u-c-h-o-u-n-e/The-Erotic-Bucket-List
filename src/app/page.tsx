@@ -17,7 +17,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Card, CardContent } from "@/components/ui/card";
-import { getEditionName } from "@/lib/utils";
+import { getEditionName } from "@/lib/utils"; // Import de getEditionName
 
 type Edition = "straight" | "gay" | "sapphic";
 type Language = "en" | "fr" | "es";
