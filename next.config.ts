@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import type { RuleSetRule } from "webpack"; // Import du type RuleSetRule
+import type { RuleSetRule } from "webpack";
 
 const nextConfig: NextConfig = {
   webpack: (config, { isServer }) => {
@@ -13,14 +13,20 @@ const nextConfig: NextConfig = {
       });
     }
 
-    // Find the existing rule that handles image assets (including SVGs by default)
-    // and exclude SVG from it to prevent conflicts with @svgr/webpack
-    const fileLoaderRule = config.module.rules.find((rule: RuleSetRule) => { // Typage du paramètre 'rule'
-      return rule.test instanceof RegExp && rule.test.test(".svg") && rule.type === "asset/resource";
-    });
+    // Find and modify the existing asset/resource rule to exclude .svg
+    const fileLoaderRuleIndex = config.module.rules.findIndex(
+      (rule: RuleSetRule) =>
+        rule.test instanceof RegExp && rule.test.test(".svg") && rule.type === "asset/resource"
+    );
 
-    if (fileLoaderRule) {
-      fileLoaderRule.exclude = /\.svg$/i;
+    if (fileLoaderRuleIndex !== -1) {
+      const fileLoaderRule = config.module.rules[fileLoaderRuleIndex] as RuleSetRule;
+      // Create a new test regex that explicitly excludes .svg
+      const newTest = new RegExp(fileLoaderRule.test.source.replace(/\|svg/g, ""), fileLoaderRule.test.flags);
+      config.module.rules[fileLoaderRuleIndex] = {
+        ...fileLoaderRule,
+        test: newTest,
+      };
     }
 
     // Add a new rule for SVG files to be handled by @svgr/webpack
