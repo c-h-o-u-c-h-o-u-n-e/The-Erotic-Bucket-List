@@ -25,7 +25,7 @@ export function LanguageSelector({
   selectedEditionColorClass,
 }: LanguageSelectorProps) {
   const buttonBaseClasses =
-    "font-inter font-normal rounded-md px-2 py-1 text-sm text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none bg-transparent"; // Changement de py-2 à py-1
+    "font-inter font-normal rounded-md px-2 py-0.5 text-sm text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none bg-transparent"; // Changement de py-1 à py-0.5
 
   const textColorClass = selectedEditionColorClass.replace('bg-', 'text-');
 
