@@ -53,7 +53,7 @@ export function EditionSelector({
   selectedLanguage,
 }: EditionSelectorProps) {
   const buttonBaseClasses =
-    "uppercase font-jetbrains-mono font-light text-[13px] text-[#FDF8F1] rounded-md p-4 text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none";
+    "uppercase font-jetbrains-mono font-light text-[13px] text-[#1A1A1A] rounded-md p-4 text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none";
 
   return (
     <Card>
