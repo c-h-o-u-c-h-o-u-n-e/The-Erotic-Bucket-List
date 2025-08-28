@@ -5,7 +5,6 @@ import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { EroticBucketListHeader } from "@/components/EroticBucketListHeader";
 import { LanguageSelector } from "@/components/LanguageSelector";
-import type { PageProps } from "next"; // Import de PageProps de Next.js
 
 // Interface pour définir la structure d'un élément de fantasme
 interface FantasyItem {
@@ -33,7 +32,7 @@ const placeholderFantasyItem: FantasyItem = {
   difficulty: "Modérée",
 };
 
-export default function FantasyPage({ params, searchParams }: PageProps<{ id: string }>) {
+export default function FantasyPage({ params, searchParams }: { params: { id: string }, searchParams?: { [key: string]: string | string[] | undefined } }) {
   // Dans une application réelle, vous récupéreriez les données en fonction de params.id
   // Pour ce modèle, nous utilisons les données de remplacement.
   const item = placeholderFantasyItem;
