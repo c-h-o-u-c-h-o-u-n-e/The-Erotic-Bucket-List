@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { EroticBucketListHeader } from "@/components/EroticBucketListHeader";
 import { LanguageSelector } from "@/components/LanguageSelector";
-import Link from "next/link"; // Import de Link pour le BreadcrumbLink
+import Link from "next/link";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -13,7 +13,7 @@ import {
   BreadcrumbLink,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"; // Import des composants Breadcrumb
+} from "@/components/ui/breadcrumb";
 
 // Interface pour définir la structure d'un élément de fantasme
 interface FantasyItem {
@@ -41,13 +41,7 @@ const placeholderFantasyItem: FantasyItem = {
   difficulty: "Modérée",
 };
 
-export default function FantasyPage({
-  params,
-  searchParams,
-}: {
-  params: { id: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
-}) {
+export default function FantasyPage() {
   // Dans une application réelle, vous récupéreriez les données en fonction de params.id
   // Pour ce modèle, nous utilisons les données de remplacement.
   const item = placeholderFantasyItem;
@@ -60,19 +54,23 @@ export default function FantasyPage({
     <div className="flex flex-col items-center min-h-screen p-4 sm:p-8">
       {/* Language Selector and Breadcrumb */}
       <div className="w-full max-w-2xl flex justify-between items-center mb-4">
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link href="/">Accueil</Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>Fantasme</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+        <Card className="w-fit bg-header shadow-custom-header">
+          <CardContent className="px-3 py-1">
+            <Breadcrumb>
+              <BreadcrumbList className="font-wf-visual-sans"> {/* Ajout de la police ici */}
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link href="/">Accueil</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>Fantasme</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+          </CardContent>
+        </Card>
         <LanguageSelector
           selectedLanguage={selectedLanguage}
           setSelectedLanguage={setSelectedLanguage}
