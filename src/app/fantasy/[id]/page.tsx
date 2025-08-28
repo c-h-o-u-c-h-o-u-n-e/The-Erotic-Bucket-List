@@ -6,7 +6,7 @@ import { useState } from "react";
 import { EroticBucketListHeader } from "@/components/EroticBucketListHeader";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import Link from "next/link";
-import { Home as HomeIcon } from "lucide-react"; // Renommage de l'icône Home en HomeIcon
+import HomeSvg from "../../../../public/icons/home.svg"; // Import de votre icône SVG
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -63,7 +63,7 @@ export default function FantasyPage() {
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
                     <Link href="/">
-                      <HomeIcon className="h-4 w-4" /> {/* Utilisation de HomeIcon */}
+                      <HomeSvg className="h-4 w-4" /> {/* Utilisation de votre icône SVG */}
                       <span className="sr-only">Accueil</span>
                     </Link>
                   </BreadcrumbLink>

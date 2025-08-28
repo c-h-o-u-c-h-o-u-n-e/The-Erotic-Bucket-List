@@ -7,7 +7,7 @@ import { LanguageSelector } from "@/components/LanguageSelector";
 import { MainContentCard } from "@/components/MainContentCard";
 import { useState } from "react";
 import Link from "next/link";
-import { Home as HomeIcon } from "lucide-react";
+import HomeSvg from "../../../public/icons/home.svg"; // Import de votre icône SVG
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -16,7 +16,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Card, CardContent } from "@/components/ui/card"; // Correction ici
+import { Card, CardContent } from "@/components/ui/card";
 import { getEditionName } from "@/lib/utils";
 
 type Edition = "straight" | "gay" | "sapphic";
@@ -46,7 +46,7 @@ export default function Home() {
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
                     <Link href="/">
-                      <HomeIcon className="h-4 w-4" />
+                      <HomeSvg className="h-4 w-4" /> {/* Utilisation de votre icône SVG */}
                       <span className="sr-only">Accueil</span>
                     </Link>
                   </BreadcrumbLink>
