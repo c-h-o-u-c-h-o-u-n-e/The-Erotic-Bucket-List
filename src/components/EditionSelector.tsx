@@ -57,7 +57,7 @@ export function EditionSelector({
 
   return (
     <Card>
-      <CardContent className="p-6 flex flex-row flex-wrap justify-center gap-0">
+      <CardContent className="p-4 flex flex-row flex-wrap justify-center gap-0">
         {editionData.map((edition) => (
           <button
             key={edition.id}
