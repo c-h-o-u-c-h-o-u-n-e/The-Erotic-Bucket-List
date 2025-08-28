@@ -6,7 +6,6 @@ import { useState } from "react";
 import { EroticBucketListHeader } from "@/components/EroticBucketListHeader";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import Link from "next/link";
-import Image from "next/image"; // Import du composant Image
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -62,16 +61,7 @@ export default function FantasyPage() {
               <BreadcrumbList className="font-wf-visual-sans h-6">
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link
-                      href="/"
-                    >
-                      <Image
-                        src={"/icons/home-#737373.png"} // Source statique pour le débogage
-                        alt="Accueil"
-                        width={16} // Ajustez la taille selon vos besoins
-                        height={16} // Ajustez la taille selon vos besoins
-                      />
-                    </Link>
+                    <Link href="/">Accueil</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
@@ -128,6 +118,7 @@ export default function FantasyPage() {
                 <p className="font-wf-visual-sans text-base">{item.preparation}</p>
               </div>
               <div>
+                <p className="font-jetbrains-mono text-sm text-muted-foreground">Durée:</p>
                 <p className="font-wf-visual-sans text-base">{item.duration}</p>
               </div>
               <div>

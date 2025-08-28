@@ -7,7 +7,6 @@ import { LanguageSelector } from "@/components/LanguageSelector";
 import { MainContentCard } from "@/components/MainContentCard";
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image"; // Import du composant Image
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -45,16 +44,7 @@ export default function Home() {
               <BreadcrumbList className="font-wf-visual-sans h-6">
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link
-                      href="/"
-                    >
-                      <Image
-                        src={"/icons/home-#737373.png"} // Source statique pour le débogage
-                        alt="Accueil"
-                        width={16} // Ajustez la taille selon vos besoins
-                        height={16} // Ajustez la taille selon vos besoins
-                      />
-                    </Link>
+                    <Link href="/">Accueil</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
