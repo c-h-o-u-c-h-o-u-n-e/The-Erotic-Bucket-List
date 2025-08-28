@@ -8,6 +8,15 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'xs': '480px',   // extra small, small phones
+      'sm': '640px',   // default small
+      'md': '768px',   // tablets
+      'lg': '1024px',  // laptops
+      'xl': '1280px',  // desktops
+      '2xl': '1536px', // large desktops
+      '3xl': '1920px', // ultra-wide monitors
+    },
   	extend: {
   		colors: {
   			background: 'hsl(var(--background))',
