@@ -6,6 +6,7 @@ import { useState } from "react";
 import { EroticBucketListHeader } from "@/components/EroticBucketListHeader";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import Link from "next/link";
+import Image from "next/image"; // Import du composant Image
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -14,7 +15,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { getEditionName } from "@/lib/utils"; // Import de getEditionName
+import { getEditionName } from "@/lib/utils";
 
 // Interface pour définir la structure d'un élément de fantasme
 interface FantasyItem {
@@ -61,7 +62,14 @@ export default function FantasyPage() {
               <BreadcrumbList className="font-wf-visual-sans h-6">
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link href="/">Accueil</Link>
+                    <Link href="/">
+                      <Image
+                        src="/icons/home.png"
+                        alt="Accueil"
+                        width={16} // Ajustez la taille selon vos besoins
+                        height={16} // Ajustez la taille selon vos besoins
+                      />
+                    </Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />

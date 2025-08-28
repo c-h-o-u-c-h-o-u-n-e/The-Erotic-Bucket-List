@@ -7,6 +7,7 @@ import { LanguageSelector } from "@/components/LanguageSelector";
 import { MainContentCard } from "@/components/MainContentCard";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image"; // Import du composant Image
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -16,7 +17,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Card, CardContent } from "@/components/ui/card";
-import { getEditionName } from "@/lib/utils"; // Import de getEditionName
+import { getEditionName } from "@/lib/utils";
 
 type Edition = "straight" | "gay" | "sapphic";
 type Language = "en" | "fr" | "es";
@@ -44,7 +45,14 @@ export default function Home() {
               <BreadcrumbList className="font-wf-visual-sans h-6">
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link href="/">Accueil</Link>
+                    <Link href="/">
+                      <Image
+                        src="/icons/home.png"
+                        alt="Accueil"
+                        width={16} // Ajustez la taille selon vos besoins
+                        height={16} // Ajustez la taille selon vos besoins
+                      />
+                    </Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
