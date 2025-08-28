@@ -24,7 +24,7 @@ export function LanguageSelector({
   selectedEditionColorClass,
 }: LanguageSelectorProps) {
   const buttonBaseClasses =
-    "uppercase font-inter font-black text-white rounded-md px-2 py-1 text-xs text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none";
+    "uppercase font-inter font-bold text-white rounded-md px-2 py-1 text-xs text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none";
 
   return (
     <Card className="w-fit">
