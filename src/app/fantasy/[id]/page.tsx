@@ -51,7 +51,6 @@ export default function FantasyPage() {
   // États pour le sélecteur de langue et l'édition, comme sur la page d'accueil
   const [selectedEdition, setSelectedEdition] = useState<Edition>("straight");
   const [selectedLanguage, setSelectedLanguage] = useState<Language>("en");
-  const [isHomeHovered, setIsHomeHovered] = useState(false); // Nouveau: État pour le survol de l'icône home
 
   return (
     <div className="flex flex-col items-center min-h-screen p-4 sm:p-8">
@@ -65,11 +64,9 @@ export default function FantasyPage() {
                   <BreadcrumbLink asChild>
                     <Link
                       href="/"
-                      onMouseEnter={() => setIsHomeHovered(true)} // Nouveau: Gère le survol
-                      onMouseLeave={() => setIsHomeHovered(false)} // Nouveau: Gère la fin du survol
                     >
                       <Image
-                        src={isHomeHovered ? "/icons/home-#0a0a0a.png" : "/icons/home-#737373.png"} // Nouveau: Source conditionnelle
+                        src={"/icons/home-#737373.png"} // Source statique pour le débogage
                         alt="Accueil"
                         width={16} // Ajustez la taille selon vos besoins
                         height={16} // Ajustez la taille selon vos besoins
@@ -131,7 +128,6 @@ export default function FantasyPage() {
                 <p className="font-wf-visual-sans text-base">{item.preparation}</p>
               </div>
               <div>
-                <p className="font-jetbrains-mono text-sm text-muted-foreground">Durée:</p>
                 <p className="font-wf-visual-sans text-base">{item.duration}</p>
               </div>
               <div>
