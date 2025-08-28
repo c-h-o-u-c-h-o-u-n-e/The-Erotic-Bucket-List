@@ -22,7 +22,7 @@ const editionData: {
     id: "straight",
     colorClass: "bg-edition-straight",
     labels: {
-      en: "The Straight Edition",
+      en: "Straight Edition",
       fr: "Édition hétéro",
       es: "Edición hetero",
     },
@@ -31,7 +31,7 @@ const editionData: {
     id: "gay",
     colorClass: "bg-edition-gay",
     labels: {
-      en: "The Gay Edition",
+      en: "Gay Edition",
       fr: "Édition gay",
       es: "Edición gay",
     },
@@ -40,7 +40,7 @@ const editionData: {
     id: "sapphic",
     colorClass: "bg-edition-sapphic",
     labels: {
-      en: "The Sapphic Edition",
+      en: "Sapphic Edition",
       fr: "Édition saphique",
       es: "Edición sáfica",
     },
@@ -53,7 +53,7 @@ export function EditionSelector({
   selectedLanguage,
 }: EditionSelectorProps) {
   const buttonBaseClasses =
-    "uppercase font-jetbrains-mono font-light text-sm text-white rounded-md p-4 text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none";
+    "uppercase font-jetbrains-mono font-light text-xs text-white rounded-md p-4 text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none";
 
   return (
     <Card>
