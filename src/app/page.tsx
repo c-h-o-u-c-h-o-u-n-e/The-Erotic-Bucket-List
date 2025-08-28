@@ -22,10 +22,6 @@ export default function Home() {
   const [selectedEdition, setSelectedEdition] = useState<Edition>("straight");
   const [selectedLanguage, setSelectedLanguage] = useState<Language>("en");
 
-  // selectedEditionColorClass n'est plus nécessaire pour LanguageSelector
-  // const selectedEditionColorClass =
-  //   editionDataForColor.find((e) => e.id === selectedEdition)?.colorClass || "bg-gray-500";
-
   return (
     <div className="flex flex-col items-center min-h-screen p-4 sm:p-8">
       {/* Language Selector above header, aligned right */}
@@ -37,8 +33,8 @@ export default function Home() {
         />
       </div>
 
-      <main className="flex flex-col gap-4 w-full max-w-2xl"> {/* Changé gap-8 en gap-4 ici */}
-        <EroticBucketListHeader />
+      <main className="flex flex-col gap-4 w-full max-w-2xl">
+        <EroticBucketListHeader selectedEdition={selectedEdition} /> {/* Ajout de la prop ici */}
         <EditionSelector
           selectedEdition={selectedEdition}
           setSelectedEdition={setSelectedEdition}
