@@ -53,11 +53,11 @@ export function EditionSelector({
   selectedLanguage,
 }: EditionSelectorProps) {
   const buttonBaseClasses =
-    "uppercase font-jetbrains-mono font-light text-[14px] text-black rounded-md px-2 py-4 text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none";
+    "uppercase font-jetbrains-mono font-light text-[14px] text-black rounded-md px-4 text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none";
 
   return (
     <Card>
-      <CardContent className="p-6 flex flex-row flex-wrap justify-center gap-4">
+      <CardContent className="p-6 flex flex-row flex-wrap justify-center gap-1">
         {editionData.map((edition) => (
           <button
             key={edition.id}
