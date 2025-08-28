@@ -14,6 +14,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { getEditionName } from "@/lib/utils"; // Import de getEditionName
 
 // Interface pour définir la structure d'un élément de fantasme
 interface FantasyItem {
@@ -39,20 +40,6 @@ const placeholderFantasyItem: FantasyItem = {
   preparation: "30 minutes",
   duration: "2 heures",
   difficulty: "Modérée",
-};
-
-// Fonction utilitaire pour obtenir le nom de l'édition
-const getEditionName = (edition: Edition) => {
-  switch (edition) {
-    case "straight":
-      return "Straight Edition";
-    case "gay":
-      return "Gay Edition";
-    case "sapphic":
-      return "Sapphic Edition";
-    default:
-      return "";
-  }
 };
 
 export default function FantasyPage() {
