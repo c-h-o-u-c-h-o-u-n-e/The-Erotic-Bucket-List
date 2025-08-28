@@ -25,13 +25,13 @@ export function LanguageSelector({
   selectedEditionColorClass,
 }: LanguageSelectorProps) {
   const buttonBaseClasses =
-    "font-inter font-normal rounded-md px-2 py-0.5 text-sm text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none bg-transparent"; // Changement de py-1 à py-0.5
+    "font-inter font-normal rounded-md px-2 py-0.5 text-sm text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none bg-transparent";
 
   const textColorClass = selectedEditionColorClass.replace('bg-', 'text-');
 
   return (
     <Card className="w-fit bg-header shadow-custom-header">
-      <CardContent className="p-3 flex flex-row items-center justify-center">
+      <CardContent className="px-3 py-1 flex flex-row items-center justify-center"> {/* Changement de p-3 à px-3 py-1 */}
         {languageData.map((lang, index) => (
           <React.Fragment key={lang.id}>
             <button
