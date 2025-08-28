@@ -37,7 +37,7 @@ export default function Home() {
         />
       </div>
 
-      <main className="flex flex-col gap-8 w-full max-w-2xl">
+      <main className="flex flex-col gap-4 w-full max-w-2xl"> {/* Changé gap-8 en gap-4 ici */}
         <EroticBucketListHeader />
         <EditionSelector
           selectedEdition={selectedEdition}
