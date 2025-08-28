@@ -60,7 +60,7 @@ export function EditionSelector() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
       <Card>
-        <CardContent className="p-6 flex flex-col gap-4">
+        <CardContent className="p-6 flex flex-row flex-wrap justify-center gap-4">
           {editionData.map((edition) => (
             <button
               key={edition.id}
@@ -81,7 +81,7 @@ export function EditionSelector() {
       </Card>
 
       <Card>
-        <CardContent className="p-6 flex flex-col gap-4">
+        <CardContent className="p-6 flex flex-row flex-wrap justify-center gap-4">
           {languageData.map((lang) => (
             <button
               key={lang.id}
