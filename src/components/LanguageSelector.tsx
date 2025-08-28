@@ -6,13 +6,12 @@ import React from "react";
 import { Separator } from "@/components/ui/separator";
 
 type Language = "en" | "fr" | "es";
-type Edition = "straight" | "gay" | "sapphic"; // Ajout du type Edition
+type Edition = "straight" | "gay" | "sapphic";
 
 interface LanguageSelectorProps {
   selectedLanguage: Language;
   setSelectedLanguage: (lang: Language) => void;
-  selectedEditionColorClass: string;
-  selectedEdition: Edition; // Ajout de la prop selectedEdition
+  selectedEdition: Edition; // La prop selectedEdition est maintenant utilisée directement
 }
 
 const languageData: { id: Language; label: string }[] = [
@@ -21,26 +20,16 @@ const languageData: { id: Language; label: string }[] = [
   { id: "es", label: "Es" },
 ];
 
-// Carte des couleurs hexadécimales pour chaque édition
-const editionHexColors: Record<Edition, string> = {
-  straight: "#60A5FA", // edition-straight
-  gay: "#F87171",     // edition-gay
-  sapphic: "#F472B6",  // edition-sapphic
-};
-
 export function LanguageSelector({
   selectedLanguage,
   setSelectedLanguage,
-  selectedEditionColorClass,
-  selectedEdition, // Récupération de la prop
+  selectedEdition, // Récupération de la prop selectedEdition
 }: LanguageSelectorProps) {
   const buttonBaseClasses =
     "font-inter font-normal rounded-md px-2 py-0.5 text-sm text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none bg-transparent";
 
-  const textColorClass = selectedEditionColorClass.replace('bg-', 'text-'); // Gardé pour la compatibilité si nécessaire, mais nous utiliserons la couleur hex.
-
-  // Obtenir la couleur hexadécimale de l'édition sélectionnée
-  const currentEditionHexColor = editionHexColors[selectedEdition];
+  // Construction de la classe de couleur de texte directement à partir de l'édition sélectionnée
+  const textColorClass = `text-edition-${selectedEdition}`;
 
   return (
     <Card className="w-fit bg-header shadow-custom-header">
@@ -51,7 +40,7 @@ export function LanguageSelector({
               onClick={() => setSelectedLanguage(lang.id)}
               className={cn(
                 buttonBaseClasses,
-                `text-[${currentEditionHexColor}]`, // Application de la couleur hexadécimale directement
+                textColorClass, // Application de la classe de couleur Tailwind nommée
                 {
                   "opacity-40 hover:opacity-70": selectedLanguage !== lang.id,
                   "opacity-100": selectedLanguage === lang.id,

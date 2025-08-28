@@ -22,8 +22,9 @@ export default function Home() {
   const [selectedEdition, setSelectedEdition] = useState<Edition>("straight");
   const [selectedLanguage, setSelectedLanguage] = useState<Language>("en");
 
-  const selectedEditionColorClass =
-    editionDataForColor.find((e) => e.id === selectedEdition)?.colorClass || "bg-gray-500";
+  // selectedEditionColorClass n'est plus nécessaire pour LanguageSelector
+  // const selectedEditionColorClass =
+  //   editionDataForColor.find((e) => e.id === selectedEdition)?.colorClass || "bg-gray-500";
 
   return (
     <div className="flex flex-col items-center min-h-screen p-4 sm:p-8">
@@ -32,7 +33,6 @@ export default function Home() {
         <LanguageSelector
           selectedLanguage={selectedLanguage}
           setSelectedLanguage={setSelectedLanguage}
-          selectedEditionColorClass={selectedEditionColorClass}
           selectedEdition={selectedEdition}
         />
       </div>
