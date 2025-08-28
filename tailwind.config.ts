@@ -108,6 +108,7 @@ export default {
         },
         fontFamily: {
             'jetbrains-mono': ['var(--font-jetbrains-mono)'],
+            'inter': ['var(--font-inter)'],
         },
   	}
   },
