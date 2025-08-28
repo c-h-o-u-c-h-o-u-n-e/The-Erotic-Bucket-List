@@ -5,7 +5,15 @@ import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { EroticBucketListHeader } from "@/components/EroticBucketListHeader";
 import { LanguageSelector } from "@/components/LanguageSelector";
-import type { PageProps } from "next"; // Import de PageProps de Next.js
+import Link from "next/link"; // Import de Link pour le BreadcrumbLink
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"; // Import des composants Breadcrumb
 
 // Interface pour définir la structure d'un élément de fantasme
 interface FantasyItem {
@@ -33,7 +41,13 @@ const placeholderFantasyItem: FantasyItem = {
   difficulty: "Modérée",
 };
 
-export default function FantasyPage({ params, searchParams }: PageProps<{ id: string }>) {
+export default function FantasyPage({
+  params,
+  searchParams,
+}: {
+  params: { id: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) {
   // Dans une application réelle, vous récupéreriez les données en fonction de params.id
   // Pour ce modèle, nous utilisons les données de remplacement.
   const item = placeholderFantasyItem;
@@ -44,8 +58,21 @@ export default function FantasyPage({ params, searchParams }: PageProps<{ id: st
 
   return (
     <div className="flex flex-col items-center min-h-screen p-4 sm:p-8">
-      {/* Language Selector above header, aligned right */}
-      <div className="w-full max-w-2xl flex justify-end mb-4">
+      {/* Language Selector and Breadcrumb */}
+      <div className="w-full max-w-2xl flex justify-between items-center mb-4">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/">Accueil</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Fantasme</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
         <LanguageSelector
           selectedLanguage={selectedLanguage}
           setSelectedLanguage={setSelectedLanguage}

@@ -6,6 +6,13 @@ import { EditionSelector } from "@/components/EditionSelector";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import { MainContentCard } from "@/components/MainContentCard"; // Import du nouveau composant
 import { useState } from "react";
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+} from "@/components/ui/breadcrumb"; // Import des composants Breadcrumb
 
 type Edition = "straight" | "gay" | "sapphic";
 type Language = "en" | "fr" | "es";
@@ -25,8 +32,15 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center min-h-screen p-4 sm:p-8">
-      {/* Language Selector above header, aligned right */}
-      <div className="w-full max-w-2xl flex justify-end mb-4">
+      {/* Language Selector and Breadcrumb */}
+      <div className="w-full max-w-2xl flex justify-between items-center mb-4">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbPage>Accueil</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
         <LanguageSelector
           selectedLanguage={selectedLanguage}
           setSelectedLanguage={setSelectedLanguage}
