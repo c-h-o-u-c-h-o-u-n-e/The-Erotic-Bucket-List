@@ -62,7 +62,10 @@ export default {
   			},
             header: {
                 DEFAULT: 'hsl(var(--header-background))',
-            }
+            },
+            'edition-straight': '#60A5FA',
+            'edition-gay': '#F87171',
+            'edition-sapphic': '#F472B6',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -93,7 +96,10 @@ export default {
   		},
         boxShadow: {
             'custom-header': '0px 3px 8px rgba(0, 0, 0, 0.24)',
-        }
+        },
+        fontFamily: {
+            'jetbrains-mono': ['var(--font-jetbrains-mono)'],
+        },
   	}
   },
   plugins: [require("tailwindcss-animate")],
