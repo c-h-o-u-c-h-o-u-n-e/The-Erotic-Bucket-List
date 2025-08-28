@@ -34,6 +34,7 @@ const editionDataForColor: {
 export default function Home() {
   const [selectedEdition, setSelectedEdition] = useState<Edition>("straight");
   const [selectedLanguage, setSelectedLanguage] = useState<Language>("en");
+  const [isHomeHovered, setIsHomeHovered] = useState(false); // Nouveau: État pour le survol de l'icône home
 
   return (
     <div className="flex flex-col items-center min-h-screen p-4 sm:p-8">
@@ -45,9 +46,13 @@ export default function Home() {
               <BreadcrumbList className="font-wf-visual-sans h-6">
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link href="/">
+                    <Link
+                      href="/"
+                      onMouseEnter={() => setIsHomeHovered(true)} // Nouveau: Gère le survol
+                      onMouseLeave={() => setIsHomeHovered(false)} // Nouveau: Gère la fin du survol
+                    >
                       <Image
-                        src="/icons/home.png"
+                        src={isHomeHovered ? "/icons/home-#0a0a0a.png" : "/icons/home-#737373.png"} // Nouveau: Source conditionnelle
                         alt="Accueil"
                         width={16} // Ajustez la taille selon vos besoins
                         height={16} // Ajustez la taille selon vos besoins
