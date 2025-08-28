@@ -14,7 +14,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { getEditionName } from "@/lib/utils"; // Import de getEditionName
+import { getEditionName } from "@/lib/utils";
+import { Home as HomeIcon } from "lucide-react"; // Renommage de l'importation de l'icône Home
 
 // Interface pour définir la structure d'un élément de fantasme
 interface FantasyItem {
@@ -61,7 +62,9 @@ export default function FantasyPage() {
               <BreadcrumbList className="font-wf-visual-sans h-6">
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link href="/">Accueil</Link>
+                    <Link href="/">
+                      <HomeIcon className="h-4 w-4" /> {/* Utilisation de HomeIcon */}
+                    </Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
