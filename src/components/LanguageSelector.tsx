@@ -28,8 +28,8 @@ export function LanguageSelector({
   const buttonBaseClasses =
     "font-inter font-normal rounded-md px-2 py-0.5 text-sm text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none bg-transparent";
 
-  // Construction de la classe de couleur de texte avec !important pour le diagnostic
-  const textColorClass = `!text-edition-${selectedEdition}`;
+  // Construction de la classe de couleur de texte sans !important
+  const textColorClass = `text-edition-${selectedEdition}`;
 
   return (
     <Card className="w-fit bg-header shadow-custom-header">
@@ -40,7 +40,7 @@ export function LanguageSelector({
               onClick={() => setSelectedLanguage(lang.id)}
               className={cn(
                 buttonBaseClasses,
-                textColorClass, // Application de la classe de couleur Tailwind avec !important
+                textColorClass, // Application de la classe de couleur Tailwind
                 {
                   "opacity-40 hover:opacity-70": selectedLanguage !== lang.id,
                   "opacity-100": selectedLanguage === lang.id,

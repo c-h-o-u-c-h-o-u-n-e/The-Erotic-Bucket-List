@@ -113,4 +113,10 @@ export default {
   	}
   },
   plugins: [require("tailwindcss-animate")],
+  // Ajout de la safelist pour les classes de couleur de texte dynamiques
+  safelist: [
+    'text-edition-straight',
+    'text-edition-gay',
+    'text-edition-sapphic',
+  ],
 } satisfies Config;
