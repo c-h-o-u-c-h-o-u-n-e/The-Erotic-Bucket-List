@@ -2,7 +2,10 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { cn } from "@/lib/utils";
+import { useState } from "react";
+import { EroticBucketListHeader } from "@/components/EroticBucketListHeader";
+import { LanguageSelector } from "@/components/LanguageSelector";
+import type { PageProps } from "next"; // Import de PageProps de Next.js
 
 // Interface pour définir la structure d'un élément de fantasme
 interface FantasyItem {
@@ -15,6 +18,10 @@ interface FantasyItem {
   difficulty: string;
 }
 
+// Types pour les éditions et les langues (dupliqués de page.tsx pour l'autonomie du composant)
+type Edition = "straight" | "gay" | "sapphic";
+type Language = "en" | "fr" | "es";
+
 // Données de remplacement pour le modèle
 const placeholderFantasyItem: FantasyItem = {
   id: "1",
@@ -26,14 +33,28 @@ const placeholderFantasyItem: FantasyItem = {
   difficulty: "Modérée",
 };
 
-export default function FantasyPage({ params }: { params: { id: string } }) {
+export default function FantasyPage({ params, searchParams }: PageProps<{ id: string }>) {
   // Dans une application réelle, vous récupéreriez les données en fonction de params.id
   // Pour ce modèle, nous utilisons les données de remplacement.
   const item = placeholderFantasyItem;
 
+  // États pour le sélecteur de langue et l'édition, comme sur la page d'accueil
+  const [selectedEdition, setSelectedEdition] = useState<Edition>("straight");
+  const [selectedLanguage, setSelectedLanguage] = useState<Language>("en");
+
   return (
     <div className="flex flex-col items-center min-h-screen p-4 sm:p-8">
+      {/* Language Selector above header, aligned right */}
+      <div className="w-full max-w-2xl flex justify-end mb-4">
+        <LanguageSelector
+          selectedLanguage={selectedLanguage}
+          setSelectedLanguage={setSelectedLanguage}
+          selectedEdition={selectedEdition}
+        />
+      </div>
+
       <main className="flex flex-col gap-4 w-full max-w-2xl">
+        <EroticBucketListHeader selectedEdition={selectedEdition} />
         <Card className="w-full bg-header shadow-custom-header">
           <CardHeader className="text-center pb-0">
             <CardTitle className="font-inter font-black uppercase text-3xl md:text-4xl leading-tight">
