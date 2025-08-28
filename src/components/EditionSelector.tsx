@@ -53,11 +53,11 @@ export function EditionSelector({
   selectedLanguage,
 }: EditionSelectorProps) {
   const buttonBaseClasses =
-    "uppercase font-jetbrains-mono font-light text-[14px] text-black rounded-md px-2 py-3 text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none";
+    "uppercase font-jetbrains-mono font-light text-[10px] text-white rounded-md p-4 text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none";
 
   return (
     <Card>
-      <CardContent className="p-4 flex flex-row flex-wrap justify-center gap-0">
+      <CardContent className="px-4 py-6 flex flex-row flex-wrap justify-center gap-4">
         {editionData.map((edition) => (
           <button
             key={edition.id}
@@ -67,7 +67,7 @@ export function EditionSelector({
               edition.colorClass,
               "flex-grow-0 flex-shrink-0 basis-[calc(33.33%-1rem)] max-md:basis-full", // For 3 buttons with gap-4, full width on small screens
               {
-                "opacity-30 hover:opacity-70": selectedEdition !== edition.id,
+                "opacity-50 hover:opacity-75": selectedEdition !== edition.id,
                 "opacity-100": selectedEdition === edition.id,
               }
             )}
