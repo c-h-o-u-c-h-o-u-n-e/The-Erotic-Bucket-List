@@ -26,7 +26,7 @@ export function LanguageSelector({
 }: LanguageSelectorProps) {
   // Suppression de 'uppercase' et de 'text-black'
   const buttonBaseClasses =
-    "font-inter font-normal rounded-md px-2 py-2 text-xs text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none bg-transparent";
+    "font-inter font-normal rounded-md px-2 py-2 text-sm text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none bg-transparent"; // Changement de text-xs à text-sm
 
   // Dérivation de la classe de couleur du texte à partir de la classe de couleur de fond de l'édition
   const textColorClass = selectedEditionColorClass.replace('bg-', 'text-');
