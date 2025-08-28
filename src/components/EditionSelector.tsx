@@ -56,7 +56,7 @@ export function EditionSelector({
     "uppercase font-jetbrains-mono font-light text-sm text-white rounded-md p-4 text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none";
 
   return (
-    <Card>
+    <Card className="bg-header shadow-custom-header">
       <CardContent className="px-4 py-6 flex flex-row flex-wrap justify-center gap-4">
         {editionData.map((edition) => (
           <button

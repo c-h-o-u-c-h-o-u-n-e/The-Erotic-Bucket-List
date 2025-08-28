@@ -27,7 +27,7 @@ export function LanguageSelector({
     "uppercase font-inter font-normal text-white rounded-md px-2 py-2 text-xs text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none";
 
   return (
-    <Card className="w-fit">
+    <Card className="w-fit bg-header shadow-custom-header">
       <CardContent className="p-3 flex flex-row flex-wrap justify-center gap-2">
         {languageData.map((lang) => (
           <button
