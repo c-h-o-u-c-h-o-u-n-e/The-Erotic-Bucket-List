@@ -33,6 +33,7 @@ export default function Home() {
           selectedLanguage={selectedLanguage}
           setSelectedLanguage={setSelectedLanguage}
           selectedEditionColorClass={selectedEditionColorClass}
+          selectedEdition={selectedEdition}
         />
       </div>
 
