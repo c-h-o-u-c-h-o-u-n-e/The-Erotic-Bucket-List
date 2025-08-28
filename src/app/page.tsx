@@ -7,7 +7,6 @@ import { LanguageSelector } from "@/components/LanguageSelector";
 import { MainContentCard } from "@/components/MainContentCard";
 import { useState } from "react";
 import Link from "next/link";
-import HomeSvg from "../../../public/icons/home.svg"; // Import de votre icône SVG
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -17,7 +16,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Card, CardContent } from "@/components/ui/card";
-import { getEditionName } from "@/lib/utils";
+import { getEditionName } from "@/lib/utils"; // Import de getEditionName
 
 type Edition = "straight" | "gay" | "sapphic";
 type Language = "en" | "fr" | "es";
@@ -45,10 +44,7 @@ export default function Home() {
               <BreadcrumbList className="font-wf-visual-sans h-6">
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link href="/">
-                      <HomeSvg className="h-4 w-4" /> {/* Utilisation de votre icône SVG */}
-                      <span className="sr-only">Accueil</span>
-                    </Link>
+                    <Link href="/">Accueil</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />

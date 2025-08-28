@@ -6,7 +6,6 @@ import { useState } from "react";
 import { EroticBucketListHeader } from "@/components/EroticBucketListHeader";
 import { LanguageSelector } from "@/components/LanguageSelector";
 import Link from "next/link";
-import HomeSvg from "../../../../public/icons/home.svg"; // Import de votre icône SVG
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -15,7 +14,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { getEditionName } from "@/lib/utils";
+import { getEditionName } from "@/lib/utils"; // Import de getEditionName
 
 // Interface pour définir la structure d'un élément de fantasme
 interface FantasyItem {
@@ -62,10 +61,7 @@ export default function FantasyPage() {
               <BreadcrumbList className="font-wf-visual-sans h-6">
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
-                    <Link href="/">
-                      <HomeSvg className="h-4 w-4" /> {/* Utilisation de votre icône SVG */}
-                      <span className="sr-only">Accueil</span>
-                    </Link>
+                    <Link href="/">Accueil</Link>
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
@@ -122,6 +118,7 @@ export default function FantasyPage() {
                 <p className="font-wf-visual-sans text-base">{item.preparation}</p>
               </div>
               <div>
+                <p className="font-jetbrains-mono text-sm text-muted-foreground">Durée:</p>
                 <p className="font-wf-visual-sans text-base">{item.duration}</p>
               </div>
               <div>
