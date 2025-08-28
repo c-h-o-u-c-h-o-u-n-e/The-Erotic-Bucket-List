@@ -1,6 +1,8 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button"; // Import du composant Button
+import Link from "next/link"; // Import du composant Link
 import React from "react";
 
 export function MainContentCard() {
@@ -16,6 +18,13 @@ export function MainContentCard() {
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
         </p>
+        <div className="mt-6 text-center">
+          <Link href="/fantasy/1" passHref>
+            <Button className="font-inter font-bold text-lg px-8 py-4">
+              Voir un exemple de fantasme
+            </Button>
+          </Link>
+        </div>
       </CardContent>
     </Card>
   );
