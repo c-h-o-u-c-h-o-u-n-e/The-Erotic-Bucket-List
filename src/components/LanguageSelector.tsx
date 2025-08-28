@@ -24,11 +24,9 @@ export function LanguageSelector({
   setSelectedLanguage,
   selectedEditionColorClass,
 }: LanguageSelectorProps) {
-  // Suppression de 'uppercase' et de 'text-black'
   const buttonBaseClasses =
-    "font-inter font-normal rounded-md px-2 py-2 text-sm text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none bg-transparent"; // Changement de text-xs à text-sm
+    "font-inter font-normal rounded-md px-2 py-1 text-sm text-center transition-opacity duration-300 ease-in-out focus:outline-none border-none bg-transparent"; // Changement de py-2 à py-1
 
-  // Dérivation de la classe de couleur du texte à partir de la classe de couleur de fond de l'édition
   const textColorClass = selectedEditionColorClass.replace('bg-', 'text-');
 
   return (
@@ -40,7 +38,7 @@ export function LanguageSelector({
               onClick={() => setSelectedLanguage(lang.id)}
               className={cn(
                 buttonBaseClasses,
-                textColorClass, // Application de la couleur du texte dynamique
+                textColorClass,
                 {
                   "opacity-40 hover:opacity-70": selectedLanguage !== lang.id,
                   "opacity-100": selectedLanguage === lang.id,
